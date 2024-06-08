@@ -20,7 +20,7 @@ Vue.use(VueRouter);
 
 Vue.prototype.$http = axios.create();
 
-window.Horizon.basePath = '/' + window.Horizon.path;
+window.Horizon.basePath = document.location.pathname.replace(new RegExp(window.Horizon.path + '.*$'), '') + window.Horizon.path;
 
 let routerBasePath = window.Horizon.basePath + '/';
 
